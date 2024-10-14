@@ -42,7 +42,7 @@ features:
     details: 啥😧，又双报错啦？
   - title: Build Tools
     details: 最好的永远是下一个构建工具🥱
-  - title: Scss
+  - title: CSS编译器
     details: 你说CSS也可以编程了？🤔
   - title: WebAPI
   - title: 性能优化
@@ -52,5 +52,4 @@ features:
   - title: Flutter
   - title: React Native
   - title: Mini program
---- 
-
+---
