@@ -14,6 +14,7 @@
   "author": "",
   "license": "CC BY",
   "devDependencies": {
+    "scss": "^0.2.4",
     "vitepress": "^1.4.0"
   },
   "dependencies": {
