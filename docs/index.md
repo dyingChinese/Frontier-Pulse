@@ -59,7 +59,7 @@ features:
     icon:
       src: /images/build-tool.png
     details: 最好的永远是下一个构建工具🥱
-  - title: Scss
+  - title: CSS编译器
     icon:
       src: /images/scss.png
     details: 你说CSS也可以编程了？🤔
@@ -125,5 +125,4 @@ features:
     icon:
       src: /images/hardware.png
     details: 前端的硬件之路
---- 
-
+---
