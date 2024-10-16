@@ -1,0 +1,140 @@
+@use 'sass:color';
+// 基础颜色定义
+$base-white: #f9f7f7;
+$base-black: #222831;
+
+// 调色板颜色定义
+$base-gray: #eaeaea;
+$base-indigo: #3f72af;
+$base-purple: #6a2c70;
+$base-yellow: #f9ed69;
+$base-green: #17b978;
+$base-blue: #0000ff;
+$base-orange: #ff9a00;
+$base-red: #b83b5e;
+$base-teal: #07689f;
+
+// 颜色映射
+$Colors-map: (
+	'gray': $base-gray,
+	'indigo': $base-indigo,
+	'purple': $base-purple,
+	'yellow': $base-yellow,
+	'green': $base-green,
+	'blue': $base-blue,
+	'orange': $base-orange,
+	'red': $base-red,
+	'teal': $base-teal
+);
+
+//功能颜色名称 '默认', '品牌',   '提示',  '备注', '成功',  '重要', '警告', '危险', '谨慎';
+$fun-name: 'default', 'brand', 'tip', 'note', 'success', 'important', 'warning', 'danger', 'caution';
+//颜色列表定义 '灰色', '靛蓝色'   '紫色',  '黄色'  '绿色', '蓝色', '橙色', '红色', '蓝绿色';
+$Colors-name-list: 'gray', 'indigo', 'purple', 'yellow', 'green', 'blue', 'orange', 'red', 'teal';
+
+// 主题定义
+$themes: (
+	'light': (
+		'neutral': $base-white,
+		'neutral-inverse': $base-black,
+		'bg': $base-white,
+		'bg-alt': color.adjust($base-white, $lightness: 7%),
+		'bg-elv': $base-white,
+		'bg-soft': color.adjust($base-white, $lightness: 10%),
+		'border': color.adjust($base-gray, $lightness: 10%),
+		'divider': color.adjust($base-gray, $lightness: 10%),
+		'gutter': color.adjust($base-gray, $lightness: 10%)
+	),
+	'dark': (
+		'neutral': $base-black,
+		'neutral-inverse': $base-white,
+		'bg': $base-black,
+		'bg-alt': color.adjust($base-gray, $lightness: -7%),
+		'bg-elv': $base-black,
+		'bg-soft': color.adjust($base-black, $lightness: 10%),
+		'border': color.adjust($base-gray, $lightness: 10%),
+		'divider': color.adjust($base-gray, $lightness: 10%),
+		'gutter': color.adjust($base-gray, $lightness: 10%)
+	)
+  /*-----     其他主题...   ---------*/
+);
+
+/**
+ * Colors: Solid
+ * -------------------------------------------------------------------------- */
+:root {
+	--cus-base-white: #{$base-white};
+	--cus-base-black: #{$base-black};
+}
+
+:root {
+	/**
+  * 颜色：调色板
+  * 用于强调色的基本颜色。这些颜色被功能颜色如“文本”、“背景”或“品牌”引用。
+  * 每种颜色都有完全相同的颜色尺度系统，包含3个不同亮度的实心颜色和1个柔和颜色。
+  * XXX-1：最实心的颜色，主要用于有色文本。当它覆盖在XXX-soft上时，必须满足对比比率。
+  * XXX-2：主要用于按钮悬停状态的颜色。
+  * XXX-3：用于实心背景的颜色，例如按钮的背景色。它必须与纯白色（#ffffff）文字在其上方时的对比比率满足要求。
+  * XXX-soft：用于细微背景的颜色，例如自定义容器或徽章。当在其上方放置XXX-1颜色时，必须满足对比比率。
+  * 柔和颜色必须是半透明的alpha通道。这一点至关重要，因为它允许在彼此之上添加多个“柔和”颜色来创建强调色，例如在自定义容器内放置内联代码块时。
+  * ------------------------------------------------------------------------- */
+	@each $key, $value in $Colors-map {
+		--cus-color-#{$key}-1: #{color.adjust($value, $lightness: 30%)};
+		--cus-color-#{$key}-2: #{color.adjust($value, $lightness: 10%)};
+		--cus-color-#{$key}-3: #{$value};
+		--cus-color-#{$key}-4: #{color.adjust($value, $lightness: -10%)};
+		--cus-color-#{$key}-5: #{color.adjust($value, $lightness: -30%)};
+		--cus-color-#{$key}-soft: rgba(#{$value}, 0.15);
+	}
+
+	/**
+  * 颜色：功能
+  * default：用于微妙指示的颜色，没有任何特殊含义附着，例如菜单悬停状态的背景色。
+  * brand：用于主要品牌颜色，例如链接文本，带有品牌主题的按钮等。
+  * tip：用于指示有用信息。默认主题通常使用品牌颜色作为此用途。
+  * warning：用于向用户发出警告。用于自定义容器、徽章等。
+  * danger：用于显示错误或危险信息给用户。用于自定义容器、徽章等。
+  * 要了解缩放系统，请参考“颜色：调色板”部分。
+  * -------------------------------------------------------------------------- */
+	@each $name, $val in $fun-name {
+		$fun-name-idx: index($fun-name, $name);
+		$_color-name: nth($Colors-name-list, $fun-name-idx);
+		--cus-color-#{$name}-1: var(--cus-color-#{$_color-name}-1);
+		--cus-color-#{$name}-2: var(--cus-color-#{$_color-name}-2);
+		--cus-color-#{$name}-3: var(--cus-color-#{$_color-name}-3);
+		--cus-color-#{$name}-4: var(--cus-color-#{$_color-name}-4);
+		--cus-color-#{$name}-5: var(--cus-color-#{$_color-name}-5);
+		--cus-color-#{$name}-soft: var(--cus-color-#{$_color-name}-soft);
+	}
+
+	/**
+  * 颜色：文本
+  * text-1：用于主要文本。
+  * text-2：用于柔和文本，例如“非活动菜单”或“信息文本”。
+  * text-3：用于微妙文本，例如“占位符”或“插入符号图标”。
+  * -------------------------------------------------------------------------- */
+	@for $idx from 1 through 5 {
+		--cus-color-text-#{$idx}: rgba(60, 60, 67, #{1 - ($idx - 1) * 0.22});
+	}
+}
+
+// 应用主题
+@each $theme, $properties in $themes {
+	.#{$theme} {
+		color-scheme: if($theme == 'dark', 'only dark', 'light dark');
+
+		@each $property, $value in $properties {
+			--cus-base-#{$property}: #{$value};
+		}
+	}
+
+	@if $theme == 'light' {
+		:root {
+			color-scheme: 'only light';
+			@each $property, $value in $properties {
+				--cus-base-#{$property}: #{$value};
+			}
+		}
+	}
+}
+
