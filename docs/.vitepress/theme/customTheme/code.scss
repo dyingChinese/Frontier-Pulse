@@ -1,0 +1,45 @@
+@use './var.scss' as var;
+/**
+ * Component: Code 组件：代码块
+ * -------------------------------------------------------------------------- */
+
+ :root {
+    --cus-code-line-height: 1.7;
+    --cus-code-font-size: 0.875em;
+    --cus-code-color: var(--cus-color-brand-1);
+    --cus-code-link-color: var(--cus-color-brand-1);
+    --cus-code-link-hover-color: var(--cus-color-brand-2);
+    --cus-code-bg: var(--cus-color-default-soft);
+  
+    --cus-code-block-color: var(--cus-color-text-2);
+    --cus-code-block-bg: var(--cus-color-bg-alt);
+    --cus-code-block-divider-color: var(--cus-color-gutter);
+  
+    --cus-code-lang-color: var(--cus-color-text-3);
+  
+    --cus-code-line-highlight-color: var(--cus-color-default-soft);
+    --cus-code-line-number-color: var(--cus-color-text-3);
+  
+    --cus-code-line-diff-add-color: var(--cus-color-success-soft);
+    --cus-code-line-diff-add-symbol-color: var(--cus-color-success-1);
+  
+    --cus-code-line-diff-remove-color: var(--cus-color-danger-soft);
+    --cus-code-line-diff-remove-symbol-color: var(--cus-color-danger-1);
+  
+    --cus-code-line-warning-color: var(--cus-color-warning-soft);
+    --cus-code-line-error-color: var(--cus-color-danger-soft);
+  
+    --cus-code-copy-code-border-color: var(--cus-color-divider);
+    --cus-code-copy-code-bg: var(--cus-color-bg-soft);
+    --cus-code-copy-code-hover-border-color: var(--cus-color-divider);
+    --cus-code-copy-code-hover-bg: var(--cus-color-bg);
+    --cus-code-copy-code-active-text: var(--cus-color-text-2);
+    --cus-code-copy-copied-text-content: 'Copied';
+  
+    --cus-code-tab-divider: var(--cus-code-block-divider-color);
+    --cus-code-tab-text-color: var(--cus-color-text-2);
+    --cus-code-tab-bg: var(--cus-code-block-bg);
+    --cus-code-tab-hover-text-color: var(--cus-color-text-1);
+    --cus-code-tab-active-text-color: var(--cus-color-text-1);
+    --cus-code-tab-active-bar-color: var(--cus-color-brand-1);
+  }

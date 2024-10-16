@@ -1,0 +1,48 @@
+/**
+ * Component: Custom Block 组件：自定义区块
+ * -------------------------------------------------------------------------- */
+
+ :root {
+    --cus--block-font-size: 14px;
+    --cus--block-code-font-size: 13px;
+  
+    --cus--block-info-border: transparent;
+    --cus--block-info-text: var(--cus-color-text-1);
+    --cus--block-info-bg: var(--cus-color-default-soft);
+    --cus--block-info-code-bg: var(--cus-color-default-soft);
+  
+    --cus--block-note-border: transparent;
+    --cus--block-note-text: var(--cus-color-text-1);
+    --cus--block-note-bg: var(--cus-color-default-soft);
+    --cus--block-note-code-bg: var(--cus-color-default-soft);
+  
+    --cus--block-tip-border: transparent;
+    --cus--block-tip-text: var(--cus-color-text-1);
+    --cus--block-tip-bg: var(--cus-color-tip-soft);
+    --cus--block-tip-code-bg: var(--cus-color-tip-soft);
+  
+    --cus--block-important-border: transparent;
+    --cus--block-important-text: var(--cus-color-text-1);
+    --cus--block-important-bg: var(--cus-color-important-soft);
+    --cus--block-important-code-bg: var(--cus-color-important-soft);
+  
+    --cus--block-warning-border: transparent;
+    --cus--block-warning-text: var(--cus-color-text-1);
+    --cus--block-warning-bg: var(--cus-color-warning-soft);
+    --cus--block-warning-code-bg: var(--cus-color-warning-soft);
+  
+    --cus--block-danger-border: transparent;
+    --cus--block-danger-text: var(--cus-color-text-1);
+    --cus--block-danger-bg: var(--cus-color-danger-soft);
+    --cus--block-danger-code-bg: var(--cus-color-danger-soft);
+  
+    --cus--block-caution-border: transparent;
+    --cus--block-caution-text: var(--cus-color-text-1);
+    --cus--block-caution-bg: var(--cus-color-caution-soft);
+    --cus--block-caution-code-bg: var(--cus-color-caution-soft);
+  
+    --cus--block-details-border: var(--cus--block-info-border);
+    --cus--block-details-text: var(--cus--block-info-text);
+    --cus--block-details-bg: var(--cus--block-info-bg);
+    --cus--block-details-code-bg: var(--cus--block-info-code-bg);
+  }
