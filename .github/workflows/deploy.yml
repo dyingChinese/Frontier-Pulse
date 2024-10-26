@@ -5,7 +5,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches:
-     - gh-pages
+     - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,6 +16,8 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  TZ: Asia/Shanghai
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
@@ -40,16 +42,22 @@ jobs:
         with:
           node-version: '20'  # Node.js version
           
+      -  name: Install pnpm
+         uses: pnpm/action-setup@v2
+         with:
+           version: latest
+           run_install: false
+       
       - name: Install dependencies
         run: |
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE20=true
-          npm install
+          pnpm install --frozen-lockfile
         
       - name: Build VitePress site
         # run: npm run build
         run: |
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE20=true
-          npm run docs:build
+          pnpm run docs:build
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
