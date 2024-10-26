@@ -5,7 +5,7 @@ import MarkdownConfig from './config/MarkdownConfig';
 
 export default defineConfig({
 	// title: "Frontier Pulse",
-	title: '子网枢纽',
+	title: 'Frontier Pulse',
 	description: '前沿脉动｜个人前端生涯分享',
 	themeConfig: themeConfig,
 	markdown: MarkdownConfig,

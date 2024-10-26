@@ -2,13 +2,12 @@ import { DefaultTheme } from 'vitepress/types/default-theme';
 
 const themeConfig: DefaultTheme.Config = {
 	footer: {
-		message:
-			"<img src='/images/police.png' style='width: 16px;height: 16px;display: inline-block;vertical-align: middle;' alt='China'/><a href='https://beian.mps.gov.cn/#/query/webSearch?code=42011102005514' rel='noreferrer' target='_blank'> 鄂公网安备42011102005514</a> <a href=\"https://beian.miit.gov.cn/\" target=\"_blank\">鄂ICP备2024076957号-1</a>",
+		message:"这是一个自定义的页脚",
 		copyright: `Copyright © ${new Date().getUTCFullYear()} <img src="/images/license.png" alt="" style='width: 16px;height: 16px;display: inline-block;vertical-align: middle;'/> CC-BY-4.0 license`
 	},
 	nav: [
-		{ text: '首页', link: '/' },
-		{ text: '独立文章', link: '/article/' },
+		{ text: 'Home', link: '/' },
+		{ text: 'Article', link: '/article/' },
 		{ text: 'Examples', link: '/markdown-examples' }
 	],
 	sidebar: {
@@ -38,6 +37,6 @@ const themeConfig: DefaultTheme.Config = {
 			}
 		]
 	},
-	socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
+	socialLinks: [{ icon: 'github', link: 'https://github.com/dyingChinese/Frontier-Pulse/tree/gh-pages' }]
 };
 export default themeConfig;
