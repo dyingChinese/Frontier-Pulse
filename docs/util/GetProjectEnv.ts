@@ -1,7 +1,7 @@
 import {loadEnv} from "vitepress";
 
 
-enum EProjectEnv {
+export  enum EProjectEnv {
     DEV = "development",
     PROD_GITHUB = "prod_github",
     PROD_Alibaba = "prod_alibaba"
