@@ -25,6 +25,8 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    permissions:
+      contents: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -54,4 +56,7 @@ jobs:
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.vitepress/dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
           
