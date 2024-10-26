@@ -3,7 +3,7 @@
 
 // 使用@each循环为每种颜色生成阴影
 :root {
-	@each $name, $color in var.$Colors-map{
+	@each $name, $color in var.$Colors-map {
 		--cus-shadow-#{$name}: #{utils.shadow($color)};
 	}
 }

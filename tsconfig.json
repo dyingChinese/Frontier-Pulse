@@ -1,10 +1,10 @@
 {
-  "compilerOptions": {
-    "module": "NodeNext",
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
-    "strict": true,
-    "jsx": "preserve"
-  },
-  "include": ["./.vitepress/**/*"]
+	"compilerOptions": {
+		"module": "NodeNext",
+		"allowImportingTsExtensions": true,
+		"allowJs": true,
+		"strict": true,
+		"jsx": "preserve"
+	},
+	"include": ["./.vitepress/**/*"]
 }

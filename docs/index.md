@@ -8,7 +8,7 @@ hero:
   text: "个人前端生涯分享"
   # tagline: 
   image:
-    src: /images/logo.png
+    src: /images/avatar-circle.png
     alt: Frontier Pulse WebSite Logo
   actions:
     - theme: brand
@@ -23,7 +23,7 @@ features:
     icon: 
       src: /images/html.png
     details: 重新认识HTML、HTML5
-    link: /guide/what-is-vitepress
+    link: /article/HTML/index
 
   - title: 🎨 CSS
     icon: 

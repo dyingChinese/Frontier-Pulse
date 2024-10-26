@@ -1,35 +1,14 @@
+import { defineConfig, UserConfig } from 'vitepress';
+import themeConfig from './config/Theme';
+import ViteConfig from './config/Vite';
+import MarkdownConfig from './config/MarkdownConfig';
 
-import { defineConfig } from "vitepress";
-// const a = createContentLoader("article/*.md")
-// console.log(a);
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Frontier Pulse",
-  description: "前沿脉动｜个人前端生涯分享",
-  themeConfig: {
-    // 其他主题配置...
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "首页", link: "/" },
-      { text: "独立文章", link: "/article/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
-
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
-  },
-  markdown: {
-
-  }
+	// title: "Frontier Pulse",
+	title: '子网枢纽',
+	description: '前沿脉动｜个人前端生涯分享',
+	themeConfig: themeConfig,
+	markdown: MarkdownConfig,
+	vite: ViteConfig,
+	plugins: []
 });
