@@ -39,11 +39,15 @@ jobs:
           node-version: '20'  # Node.js version
           
       - name: Install dependencies
-        run: npm install
+        run: |
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE20=true
+          npm install
         
       - name: Build VitePress site
         # run: npm run build
-        run: npm run docs:build
+        run: |
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE20=true
+          npm run docs:build
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
