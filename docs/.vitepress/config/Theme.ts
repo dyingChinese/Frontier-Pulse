@@ -11,20 +11,19 @@ const getMessage = () => {
 }
 
 const getCopyRight = () => {
-    let base = process.env.ENVIRONMENT === EProjectEnv.PROD_GITHUB ? '/Frontier-Pulse/':'';
-    return `Copyright © ${new Date().getUTCFullYear()} <img src="${base}images/license.png" alt="" style='width: 16px;height: 16px;display: inline-block;vertical-align: middle;'/> CC-BY-4.0 license`
+    let base = process.env.ENVIRONMENT === EProjectEnv.PROD_GITHUB ? '/Frontier-Pulse' : '';
+    return `Copyright © ${new Date().getUTCFullYear()} <img src="${base}/images/license.png" alt="" style='width: 16px;height: 16px;display: inline-block;vertical-align: middle;'/> CC-BY-4.0 license`
 }
+
+const isGithub = process.env.ENVIRONMENT === EProjectEnv.PROD_GITHUB;
+
 
 const themeConfig: DefaultTheme.Config = {
     footer: {
         message: getMessage(),
         copyright: getCopyRight()
     },
-    nav: [
-        {text: '首页', link: '/'},
-        {text: '独立文章', link: '/article/'},
-        {text: 'Examples', link: '/markdown-examples'}
-    ],
+    nav: NavConfig(),
     sidebar: {
         '/': [
             {
@@ -55,3 +54,20 @@ const themeConfig: DefaultTheme.Config = {
     socialLinks: [{icon: 'github', link: 'https://github.com/vuejs/vitepress'}]
 };
 export default themeConfig;
+
+
+function NavConfig() {
+    const baseNavItems = [
+        {text: '首页', link: '/'},
+        {text: '独立文章', link: '/posts/'},
+    ];
+    const githubNavItems = [
+        {text: '独立项目', link: '/projects/'},
+    ]
+
+
+    return isGithub ?
+        [...baseNavItems, ...githubNavItems]
+        : baseNavItems;
+
+}

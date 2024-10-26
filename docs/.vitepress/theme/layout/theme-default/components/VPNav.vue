@@ -51,7 +51,7 @@ watchEffect(() => {
 
 @media (min-width: 960px) {
   .VPNav {
-    position: fixed;
+    //position: fixed;
   }
 }
 </style>

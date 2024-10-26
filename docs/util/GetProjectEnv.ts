@@ -1,12 +1,11 @@
 import {loadEnv} from "vitepress";
+import {IEnv} from "../../global";
 
-
-export  enum EProjectEnv {
+export enum EProjectEnv {
     DEV = "development",
     PROD_GITHUB = "prod_github",
     PROD_Alibaba = "prod_alibaba"
 }
-
 export const getProjectEnv = (): IEnv => {
     let env: IEnv | undefined;
     if (process.env.ENVIRONMENT === EProjectEnv.DEV) {
@@ -19,3 +18,5 @@ export const getProjectEnv = (): IEnv => {
     console.log(`${process.env.ENVIRONMENT} ====> ${JSON.stringify(env, null, 2)}`)
     return env;
 }
+
+

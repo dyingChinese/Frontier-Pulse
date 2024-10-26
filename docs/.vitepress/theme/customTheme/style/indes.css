@@ -1,0 +1,303 @@
+@charset "UTF-8";
+/**
+ * Colors: Solid
+ * -------------------------------------------------------------------------- */
+:root {
+  --cus-base-white: #f9f7f7;
+  --cus-base-black: #222831;
+}
+
+:root {
+  /**
+   * 颜色：调色板
+   * 用于强调色的基本颜色。这些颜色被功能颜色如“文本”、“背景”或“品牌”引用。
+   * 每种颜色都有完全相同的颜色尺度系统，包含3个不同亮度的实心颜色和1个柔和颜色。
+   * XXX-1：最实心的颜色，主要用于有色文本。当它覆盖在XXX-soft上时，必须满足对比比率。
+   * XXX-2：主要用于按钮悬停状态的颜色。
+   * XXX-3：用于实心背景的颜色，例如按钮的背景色。它必须与纯白色（#ffffff）文字在其上方时的对比比率满足要求。
+   * XXX-soft：用于细微背景的颜色，例如自定义容器或徽章。当在其上方放置XXX-1颜色时，必须满足对比比率。
+   * 柔和颜色必须是半透明的alpha通道。这一点至关重要，因为它允许在彼此之上添加多个“柔和”颜色来创建强调色，例如在自定义容器内放置内联代码块时。
+   * ------------------------------------------------------------------------- */
+  --cus-color-gray-1: hsl(0, 0%, 121.7647058824%);
+  --cus-color-gray-2: hsl(0, 0%, 101.7647058824%);
+  --cus-color-gray-3: #eaeaea;
+  --cus-color-gray-4: rgb(208.5, 208.5, 208.5);
+  --cus-color-gray-5: rgb(157.5, 157.5, 157.5);
+  --cus-color-gray-soft: rgba(#eaeaea, 0.15);
+  --cus-color-indigo-1: rgb(167.5, 193, 223.5);
+  --cus-color-indigo-2: rgb(92.5, 139.8571428571, 196.5);
+  --cus-color-indigo-3: #3f72af;
+  --cus-color-indigo-4: rgb(49.5, 89.5714285714, 137.5);
+  --cus-color-indigo-5: rgb(22.5, 40.7142857143, 62.5);
+  --cus-color-indigo-soft: rgba(#3f72af, 0.15);
+  --cus-color-purple-1: rgb(190.5769230769, 110.6923076923, 198.3076923077);
+  --cus-color-purple-2: rgb(140.6538461538, 58.3846153846, 148.6153846154);
+  --cus-color-purple-3: #6a2c70;
+  --cus-color-purple-4: rgb(71.3461538462, 29.6153846154, 75.3846153846);
+  --cus-color-purple-5: rgb(2.0384615385, 0.8461538462, 2.1538461538);
+  --cus-color-purple-soft: rgba(#6a2c70, 0.15);
+  --cus-color-yellow-1: rgb(254.8846153846, 254.6538461538, 252.1153846154);
+  --cus-color-yellow-2: rgb(250.9615384615, 242.8846153846, 154.0384615385);
+  --cus-color-yellow-3: #f9ed69;
+  --cus-color-yellow-4: rgb(247.0384615385, 231.1153846154, 55.9615384615);
+  --cus-color-yellow-5: rgb(193.2692307692, 177.8076923077, 7.7307692308);
+  --cus-color-yellow-soft: rgba(#f9ed69, 0.15);
+  --cus-color-green-1: rgb(122.4759615385, 238.5240384615, 191.9615384615);
+  --cus-color-green-2: rgb(31.7548076923, 227.2451923077, 148.8076923077);
+  --cus-color-green-3: #17b978;
+  --cus-color-green-4: rgb(17.3605769231, 139.6394230769, 90.5769230769);
+  --cus-color-green-5: rgb(6.0817307692, 48.9182692308, 31.7307692308);
+  --cus-color-green-soft: rgba(#17b978, 0.15);
+  --cus-color-blue-1: #9999ff;
+  --cus-color-blue-2: #3333ff;
+  --cus-color-blue-3: #0000ff;
+  --cus-color-blue-4: #0000cc;
+  --cus-color-blue-5: #000066;
+  --cus-color-blue-soft: rgba(#0000ff, 0.15);
+  --cus-color-orange-1: rgb(255, 214.6, 153);
+  --cus-color-orange-2: rgb(255, 174.2, 51);
+  --cus-color-orange-3: #ff9a00;
+  --cus-color-orange-4: rgb(204, 123.2, 0);
+  --cus-color-orange-5: rgb(102, 61.6, 0);
+  --cus-color-orange-soft: rgba(#ff9a00, 0.15);
+  --cus-color-red-1: rgb(227.3209876543, 168.6790123457, 185.0987654321);
+  --cus-color-red-2: rgb(202.5555555556, 91.4444444444, 122.5555555556);
+  --cus-color-red-3: #b83b5e;
+  --cus-color-red-4: rgb(145.3827160494, 46.6172839506, 74.2716049383);
+  --cus-color-red-5: rgb(68.1481481481, 21.8518518519, 34.8148148148);
+  --cus-color-red-soft: rgba(#b83b5e, 0.15);
+  --cus-color-teal-1: rgb(72.0542168675, 183.6626506024, 246.9457831325);
+  --cus-color-teal-2: rgb(9.1506024096, 135.9518072289, 207.8493975904);
+  --cus-color-teal-3: #07689f;
+  --cus-color-teal-4: rgb(4.8493975904, 72.0481927711, 110.1506024096);
+  --cus-color-teal-5: rgb(0.5481927711, 8.1445783133, 12.4518072289);
+  --cus-color-teal-soft: rgba(#07689f, 0.15);
+  /**
+   * 颜色：功能
+   * default：用于微妙指示的颜色，没有任何特殊含义附着，例如菜单悬停状态的背景色。
+   * brand：用于主要品牌颜色，例如链接文本，带有品牌主题的按钮等。
+   * tip：用于指示有用信息。默认主题通常使用品牌颜色作为此用途。
+   * warning：用于向用户发出警告。用于自定义容器、徽章等。
+   * danger：用于显示错误或危险信息给用户。用于自定义容器、徽章等。
+   * 要了解缩放系统，请参考“颜色：调色板”部分。
+   * -------------------------------------------------------------------------- */
+  --cus-color-default-1: var(--cus-color-gray-1);
+  --cus-color-default-2: var(--cus-color-gray-2);
+  --cus-color-default-3: var(--cus-color-gray-3);
+  --cus-color-default-4: var(--cus-color-gray-4);
+  --cus-color-default-5: var(--cus-color-gray-5);
+  --cus-color-default-soft: var(--cus-color-gray-soft);
+  --cus-color-brand-1: var(--cus-color-indigo-1);
+  --cus-color-brand-2: var(--cus-color-indigo-2);
+  --cus-color-brand-3: var(--cus-color-indigo-3);
+  --cus-color-brand-4: var(--cus-color-indigo-4);
+  --cus-color-brand-5: var(--cus-color-indigo-5);
+  --cus-color-brand-soft: var(--cus-color-indigo-soft);
+  --cus-color-tip-1: var(--cus-color-purple-1);
+  --cus-color-tip-2: var(--cus-color-purple-2);
+  --cus-color-tip-3: var(--cus-color-purple-3);
+  --cus-color-tip-4: var(--cus-color-purple-4);
+  --cus-color-tip-5: var(--cus-color-purple-5);
+  --cus-color-tip-soft: var(--cus-color-purple-soft);
+  --cus-color-note-1: var(--cus-color-yellow-1);
+  --cus-color-note-2: var(--cus-color-yellow-2);
+  --cus-color-note-3: var(--cus-color-yellow-3);
+  --cus-color-note-4: var(--cus-color-yellow-4);
+  --cus-color-note-5: var(--cus-color-yellow-5);
+  --cus-color-note-soft: var(--cus-color-yellow-soft);
+  --cus-color-success-1: var(--cus-color-green-1);
+  --cus-color-success-2: var(--cus-color-green-2);
+  --cus-color-success-3: var(--cus-color-green-3);
+  --cus-color-success-4: var(--cus-color-green-4);
+  --cus-color-success-5: var(--cus-color-green-5);
+  --cus-color-success-soft: var(--cus-color-green-soft);
+  --cus-color-important-1: var(--cus-color-blue-1);
+  --cus-color-important-2: var(--cus-color-blue-2);
+  --cus-color-important-3: var(--cus-color-blue-3);
+  --cus-color-important-4: var(--cus-color-blue-4);
+  --cus-color-important-5: var(--cus-color-blue-5);
+  --cus-color-important-soft: var(--cus-color-blue-soft);
+  --cus-color-warning-1: var(--cus-color-orange-1);
+  --cus-color-warning-2: var(--cus-color-orange-2);
+  --cus-color-warning-3: var(--cus-color-orange-3);
+  --cus-color-warning-4: var(--cus-color-orange-4);
+  --cus-color-warning-5: var(--cus-color-orange-5);
+  --cus-color-warning-soft: var(--cus-color-orange-soft);
+  --cus-color-danger-1: var(--cus-color-red-1);
+  --cus-color-danger-2: var(--cus-color-red-2);
+  --cus-color-danger-3: var(--cus-color-red-3);
+  --cus-color-danger-4: var(--cus-color-red-4);
+  --cus-color-danger-5: var(--cus-color-red-5);
+  --cus-color-danger-soft: var(--cus-color-red-soft);
+  --cus-color-caution-1: var(--cus-color-teal-1);
+  --cus-color-caution-2: var(--cus-color-teal-2);
+  --cus-color-caution-3: var(--cus-color-teal-3);
+  --cus-color-caution-4: var(--cus-color-teal-4);
+  --cus-color-caution-5: var(--cus-color-teal-5);
+  --cus-color-caution-soft: var(--cus-color-teal-soft);
+  /**
+   * 颜色：文本
+   * text-1：用于主要文本。
+   * text-2：用于柔和文本，例如“非活动菜单”或“信息文本”。
+   * text-3：用于微妙文本，例如“占位符”或“插入符号图标”。
+   * -------------------------------------------------------------------------- */
+  --cus-color-text-1: rgba(60, 60, 67, 1);
+  --cus-color-text-2: rgba(60, 60, 67, 0.78);
+  --cus-color-text-3: rgba(60, 60, 67, 0.56);
+  --cus-color-text-4: rgba(60, 60, 67, 0.34);
+  --cus-color-text-5: rgba(60, 60, 67, 0.12);
+}
+
+.light {
+  color-scheme: "light dark";
+  --cus-base-neutral: #f9f7f7;
+  --cus-base-neutral-inverse: #222831;
+  --cus-base-bg: #f9f7f7;
+  --cus-base-bg-alt: hsl(0, 14.2857142857%, 104.2549019608%);
+  --cus-base-bg-elv: #f9f7f7;
+  --cus-base-bg-soft: hsl(0, 14.2857142857%, 107.2549019608%);
+  --cus-base-border: hsl(0, 0%, 101.7647058824%);
+  --cus-base-divider: hsl(0, 0%, 101.7647058824%);
+  --cus-base-gutter: hsl(0, 0%, 101.7647058824%);
+}
+
+:root {
+  color-scheme: "only light";
+  --cus-base-neutral: #f9f7f7;
+  --cus-base-neutral-inverse: #222831;
+  --cus-base-bg: #f9f7f7;
+  --cus-base-bg-alt: hsl(0, 14.2857142857%, 104.2549019608%);
+  --cus-base-bg-elv: #f9f7f7;
+  --cus-base-bg-soft: hsl(0, 14.2857142857%, 107.2549019608%);
+  --cus-base-border: hsl(0, 0%, 101.7647058824%);
+  --cus-base-divider: hsl(0, 0%, 101.7647058824%);
+  --cus-base-gutter: hsl(0, 0%, 101.7647058824%);
+}
+
+.dark {
+  color-scheme: "only dark";
+  --cus-base-neutral: #222831;
+  --cus-base-neutral-inverse: #f9f7f7;
+  --cus-base-bg: #222831;
+  --cus-base-bg-alt: rgb(216.15, 216.15, 216.15);
+  --cus-base-bg-elv: #222831;
+  --cus-base-bg-soft: rgb(54.8915662651, 64.578313253, 79.1084337349);
+  --cus-base-border: hsl(0, 0%, 101.7647058824%);
+  --cus-base-divider: hsl(0, 0%, 101.7647058824%);
+  --cus-base-gutter: hsl(0, 0%, 101.7647058824%);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+:root {
+  --cus-z-index-footer: 10;
+  --cus-z-index-local-nav: 20;
+  --cus-z-index-nav: 30;
+  --cus-z-index-layout-top: 40;
+  --cus-z-index-backdrop: 50;
+  --cus-z-index-sidebar: 60;
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+:root {
+  --cus-font-family-base: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --cus-font-family-mono: ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-optical-sizing: auto;
+}
+
+:root:where(:lang(zh)) {
+  --cus-font-family-base: "Punctuation SC", "Inter", ui-sans-serif, system-ui, "PingFang SC", "Noto Sans CJK SC", "Noto Sans SC", "Heiti SC", "Microsoft YaHei", "DengXian", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+  --cus-shadow-gray: 0 1px 3px rgba(234, 234, 234, 0.2), 0 1px 2px rgba(234, 234, 234, 0.14), 0 2px 6px rgba(234, 234, 234, 0.12);
+  --cus-shadow-indigo: 0 1px 3px rgba(63, 114, 175, 0.2), 0 1px 2px rgba(63, 114, 175, 0.14), 0 2px 6px rgba(63, 114, 175, 0.12);
+  --cus-shadow-purple: 0 1px 3px rgba(106, 44, 112, 0.2), 0 1px 2px rgba(106, 44, 112, 0.14), 0 2px 6px rgba(106, 44, 112, 0.12);
+  --cus-shadow-yellow: 0 1px 3px rgba(249, 237, 105, 0.2), 0 1px 2px rgba(249, 237, 105, 0.14), 0 2px 6px rgba(249, 237, 105, 0.12);
+  --cus-shadow-green: 0 1px 3px rgba(23, 185, 120, 0.2), 0 1px 2px rgba(23, 185, 120, 0.14), 0 2px 6px rgba(23, 185, 120, 0.12);
+  --cus-shadow-blue: 0 1px 3px rgba(0, 0, 255, 0.2), 0 1px 2px rgba(0, 0, 255, 0.14), 0 2px 6px rgba(0, 0, 255, 0.12);
+  --cus-shadow-orange: 0 1px 3px rgba(255, 154, 0, 0.2), 0 1px 2px rgba(255, 154, 0, 0.14), 0 2px 6px rgba(255, 154, 0, 0.12);
+  --cus-shadow-red: 0 1px 3px rgba(184, 59, 94, 0.2), 0 1px 2px rgba(184, 59, 94, 0.14), 0 2px 6px rgba(184, 59, 94, 0.12);
+  --cus-shadow-teal: 0 1px 3px rgba(7, 104, 159, 0.2), 0 1px 2px rgba(7, 104, 159, 0.14), 0 2px 6px rgba(7, 104, 159, 0.12);
+}
+
+/**
+ * Component: Custom Block 组件：自定义区块
+ * -------------------------------------------------------------------------- */
+:root {
+  --cus--block-font-size: 14px;
+  --cus--block-code-font-size: 13px;
+  --cus--block-info-border: transparent;
+  --cus--block-info-text: var(--cus-color-text-1);
+  --cus--block-info-bg: var(--cus-color-default-soft);
+  --cus--block-info-code-bg: var(--cus-color-default-soft);
+  --cus--block-note-border: transparent;
+  --cus--block-note-text: var(--cus-color-text-1);
+  --cus--block-note-bg: var(--cus-color-default-soft);
+  --cus--block-note-code-bg: var(--cus-color-default-soft);
+  --cus--block-tip-border: transparent;
+  --cus--block-tip-text: var(--cus-color-text-1);
+  --cus--block-tip-bg: var(--cus-color-tip-soft);
+  --cus--block-tip-code-bg: var(--cus-color-tip-soft);
+  --cus--block-important-border: transparent;
+  --cus--block-important-text: var(--cus-color-text-1);
+  --cus--block-important-bg: var(--cus-color-important-soft);
+  --cus--block-important-code-bg: var(--cus-color-important-soft);
+  --cus--block-warning-border: transparent;
+  --cus--block-warning-text: var(--cus-color-text-1);
+  --cus--block-warning-bg: var(--cus-color-warning-soft);
+  --cus--block-warning-code-bg: var(--cus-color-warning-soft);
+  --cus--block-danger-border: transparent;
+  --cus--block-danger-text: var(--cus-color-text-1);
+  --cus--block-danger-bg: var(--cus-color-danger-soft);
+  --cus--block-danger-code-bg: var(--cus-color-danger-soft);
+  --cus--block-caution-border: transparent;
+  --cus--block-caution-text: var(--cus-color-text-1);
+  --cus--block-caution-bg: var(--cus-color-caution-soft);
+  --cus--block-caution-code-bg: var(--cus-color-caution-soft);
+  --cus--block-details-border: var(--cus--block-info-border);
+  --cus--block-details-text: var(--cus--block-info-text);
+  --cus--block-details-bg: var(--cus--block-info-bg);
+  --cus--block-details-code-bg: var(--cus--block-info-code-bg);
+}
+
+/**
+ * Component: Code 组件：代码块
+ * -------------------------------------------------------------------------- */
+:root {
+  --cus-code-line-height: 1.7;
+  --cus-code-font-size: 0.875em;
+  --cus-code-color: var(--cus-color-brand-1);
+  --cus-code-link-color: var(--cus-color-brand-1);
+  --cus-code-link-hover-color: var(--cus-color-brand-2);
+  --cus-code-bg: var(--cus-color-default-soft);
+  --cus-code-block-color: var(--cus-color-text-2);
+  --cus-code-block-bg: var(--cus-color-bg-alt);
+  --cus-code-block-divider-color: var(--cus-color-gutter);
+  --cus-code-lang-color: var(--cus-color-text-3);
+  --cus-code-line-highlight-color: var(--cus-color-default-soft);
+  --cus-code-line-number-color: var(--cus-color-text-3);
+  --cus-code-line-diff-add-color: var(--cus-color-success-soft);
+  --cus-code-line-diff-add-symbol-color: var(--cus-color-success-1);
+  --cus-code-line-diff-remove-color: var(--cus-color-danger-soft);
+  --cus-code-line-diff-remove-symbol-color: var(--cus-color-danger-1);
+  --cus-code-line-warning-color: var(--cus-color-warning-soft);
+  --cus-code-line-error-color: var(--cus-color-danger-soft);
+  --cus-code-copy-code-border-color: var(--cus-color-divider);
+  --cus-code-copy-code-bg: var(--cus-color-bg-soft);
+  --cus-code-copy-code-hover-border-color: var(--cus-color-divider);
+  --cus-code-copy-code-hover-bg: var(--cus-color-bg);
+  --cus-code-copy-code-active-text: var(--cus-color-text-2);
+  --cus-code-copy-copied-text-content: "Copied";
+  --cus-code-tab-divider: var(--cus-code-block-divider-color);
+  --cus-code-tab-text-color: var(--cus-color-text-2);
+  --cus-code-tab-bg: var(--cus-code-block-bg);
+  --cus-code-tab-hover-text-color: var(--cus-color-text-1);
+  --cus-code-tab-active-text-color: var(--cus-color-text-1);
+  --cus-code-tab-active-bar-color: var(--cus-color-brand-1);
+}
+
+/*# sourceMappingURL=indes.css.map */

@@ -12,5 +12,5 @@ const { frontmatter, page } = data;
   <template v-if="frontmatter.layout === 'ArticleLayout'">
     <ArticleLayout />
   </template>
-  <Layout v-else/> 
+  <Layout v-else/>
 </template>

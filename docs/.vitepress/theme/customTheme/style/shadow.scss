@@ -1,5 +1,5 @@
-@use './var.scss';
-@use './utils.scss';
+@use 'var';
+@use 'utils';
 
 // 使用@each循环为每种颜色生成阴影
 :root {

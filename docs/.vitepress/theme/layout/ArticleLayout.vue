@@ -1,51 +1,32 @@
 <template>
   <!-- 您可以在这里添加自定义的布局元素 -->
-  <div class="article-layout"  :class="frontmatter.pageClass">
-    <VPSkipLink />
-    <VPBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
-    <VPNav />
+  <div class="article-layout" :class="frontmatter.pageClass">
 
-    <div class="VPContent" id="VPContent" :class="{'has-sidebar': hasSidebar}">
-      <ul>
-        <li v-for="post in posts" :key="post.url">
-          {{ post.frontmatter.desc }}
-        </li>
-      </ul>
-    </div>
+      <VPNav/>
+      <!--    <div class="container top-tip">-->
+      <!--      <Card/>-->
+      <!--      <Card/>-->
+      <!--      <Card/>-->
+      <!--      <el-divider/>-->
+      <!--    </div>-->
+      <div class="article-layout-list">
+        <ArticleLayoutList :posts="posts"/>
+      </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import { useCloseSidebarOnEscape, useSidebar } from './theme-default/composables/sidebar'
-import { computed, provide, useSlots, watch } from "vue";
-import { Content, useData,useRoute } from "vitepress";
+import {Content, useData, useRoute, withBase} from "vitepress";
 
-import VPBackdrop from './theme-default/components/VPBackdrop.vue'
 import VPNav from './theme-default/components/VPNav.vue'
-import VPSkipLink from './theme-default/components/VPSkipLink.vue'
-import { data as posts } from './posts.data.js'
+import {data as posts} from './posts.data.js'
+import ArticleLayoutList from "../customTheme/components/ArticleLayoutList.vue";
+import CustomPostPage from "../customTheme/components/CustomPostPage.vue";
+
+const {frontmatter} = useData()
 
 
-console.log(posts);
-
-
-const { frontmatter } = useData()
-const {
-  isOpen: isSidebarOpen,
-  close: closeSidebar,
-  hasSidebar:hasSidebar
-} = useSidebar()
-const route = useRoute()
-watch(() => route.path, closeSidebar)
-
-useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
-
-
-
-const slots = useSlots()
-const heroImageSlotExists = computed(() => !!slots['home-hero-image'])
-
-provide('hero-image-slot-exists', heroImageSlotExists)
 </script>
 
 <style lang="scss" scoped>
@@ -83,4 +64,39 @@ provide('hero-image-slot-exists', heroImageSlotExists)
     padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
   }
 }
+
+.container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--cus-color-bg);
+  border-radius: 10px;
+}
+
+.top-tip {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+@media (max-width: 960px) {
+  .top-tip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.article-layout-list {
+  margin: 0 10em;
+  padding: 20px;
+  @media (max-width: 960px) {
+    margin: 0;
+  }
+}
+
 </style>

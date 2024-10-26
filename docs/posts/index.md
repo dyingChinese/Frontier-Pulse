@@ -2,10 +2,8 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: ArticleLayout
 sidebar: false
-desc: nihao
+date: 2021-10-10
 ---
-ashdash
-
 # jasiodj
 
 sadsaadwaasd 
