@@ -11,9 +11,9 @@ temp
 **/.git
 **/.svn
 **/.hg
-
+**/.DS_Store
 
 **/node_modules
 **/dist
 **/mock
-**/public 
+**/public
