@@ -1,0 +1,201 @@
+@use 'var';
+@use 'utils';
+@use 'ZIndex';
+@use 'typography';
+@use 'shadow';
+@use 'customBlock';
+@use 'code';
+
+
+.custom-post-page {
+
+  font-size: 20px;
+  @font-face {
+    font-family: 'HarmonyOS Sans SC Bold';
+    src: url('/fonts/HarmonyOS_Sans_SC_Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  html, body, #write {
+    font-family: 'HarmonyOS Sans SC Bold', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'HarmonyOS Sans SC Bold', sans-serif;
+    letter-spacing: -.02em;
+    margin: 1em 0;
+  }
+
+  $font-size: 4;
+
+  @each $size in (1, 2, 3, 4, 5, 6) {
+    h#{$size} {
+      font-size: $font-size - $size * 0.5 + em;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    color: var(--cus-color-text-1);
+  }
+
+  /* Stuff */
+
+  sup.md-footnote {
+    background-color: transparent;
+    color: var(--cus-color-text-1);
+    padding: 1px;
+    margin: 0;
+  }
+
+  code, .md-fences, .sourceCode {
+    background: var(--cus-code-bg);
+  }
+
+  .md-fences, pre.sourceCode {
+    font-size: .7em;
+    padding: .5rem;
+  }
+
+  .show-fences-line-number .md-fences {
+    padding-left: .5rem;
+  }
+
+  blockquote {
+    margin: 2rem .2rem;
+    padding: .3rem .5rem;
+    color: #6f6f6f;
+    border-left: .4rem solid gray;
+  }
+
+  blockquote p {
+    padding: .2rem 1.5rem;
+  }
+
+  mark {
+    background: yellow;
+  }
+
+  figure {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  figcaption {
+    text-align: center;
+    margin: .5rem auto;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  /*
+      Print Mode and page breaks.
+      WkhtmlToPDF does not work on @print mode
+  */
+
+  @media (max-width: 210mm) {
+    img {
+      max-height: 8cm;
+    }
+    html {
+      font-size: 16px;
+    }
+    div[title="pb"], page-break {
+      display: block;
+      page-break-after: always;
+      break-after: page;
+    }
+    nav {
+      font-size: .9rem;
+      page-break-after: always;
+      page-break-before: always;
+    }
+    nav a {
+      color: black;
+    }
+    /* Move top-level headings to a new page on the right-hand side: */
+    h1, h2 {
+      page-break-before: right;
+      break-before: recto;
+    }
+    /* Override the previous ruleset for the very first heading: */
+    h1:first-of-type, section > h1:first-child {
+      page-break-before: avoid;
+      break-before: avoid;
+    }
+    /* Headings should not be the last paragraph on a page: */
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+    }
+    /* Consecutive headings with deepening level should not be split across pages: */
+    h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
+      page-break-before: avoid;
+    }
+  }
+  /***************** 这里定义表格的样式 ****************/
+
+  table {
+    position: relative;
+    width: 70%;
+    left: 15%;
+    *border-collapse: collapse;
+    border-spacing: 0;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+  }
+
+  table thead th {
+    border-bottom: 3px double black;
+  }
+
+
+  /***************** 这里定义公式的样式 ****************/
+
+  .MathJax_Display {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  p.mathjax-block,
+  .mathjax-block {
+    padding-bottom: 0;
+  }
+
+  .mathjax-block > .code-tooltip {
+    bottom: 5px;
+    box-shadow: none;
+  }
+
+  /***************** 这里定义打印或者导出PDF的样式 ****************/
+
+  @media print {
+
+    /* for example: */
+    .typora-export * {
+      -webkit-print-color-adjust: exact;
+    }
+
+    /* add styles here */
+    @page {
+      margin: 20mm 0;
+    }
+
+    #write {
+      max-width: 100%;
+    }
+  }
+}
