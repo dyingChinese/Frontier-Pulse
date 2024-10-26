@@ -217,3 +217,30 @@ Hugo
 JSDoc
 TypeDoc
 Docsify
+//	"lint-staged": {
+//		"*.{js,jsx,ts,tsx,vue}": [
+//			"eslint . --fix",
+//			"prettier --write",
+//			"git add"
+//		],
+//		"*.{cjs,json}": [
+//			"prettier --write"
+//		],
+//		"*.{vue,html}": [
+//			"eslint --fix",
+//			"prettier --write",
+//			"stylelint --fix"
+//		],
+//		"*.{scss,css}": [
+//			"stylelint --fix",
+//			"prettier --write"
+//		],
+//		"*.md": [
+//			"prettier --write"
+//		]
+//	},
+"config": {
+"commitizen": {
+"path": "node_modules/cz-git"
+}
+},
